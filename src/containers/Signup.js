@@ -1,5 +1,7 @@
 import "/Users/sedatif2/Documents/REACTEUR/04-React/week-2/08/vinted-front/src/containers/Signup.css";
 import { useState } from "react";
+import { useEffect } from "react";
+
 import { useHistory, Redirect } from "react-router-dom";
 import axios from "axios";
 
@@ -7,7 +9,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const history = useHistory();
+  const history = useHistory();
   //   const [data, setData] = useState();
 
   //   useEffect(() => {
@@ -19,14 +21,17 @@ const Signup = () => {
   //     };
   //     fetchData();
   //   }, []);
-
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup"
+      );
+    };
+    fetchData();
+  }, []);
   const handleSubmit = (event) => {
-    const response = axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/user/signup"
-    );
     event.preventDefault();
 
-    // console.log(response.data);
     // history.pushState("/");
   };
 
