@@ -1,0 +1,11 @@
+.header {
+  height: 3vh;
+  border-bottom: solid 1px aqua;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 50vw;
+}
+.header img {
+  height: 3vh;
+}

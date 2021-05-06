@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import Header from "../component/Header";
 
 const Home = () => {
+  const id = 4323424;
   return (
     <div>
-      <Header />
-      <Link to="/offer">Offer</Link>
+      <Link to={`/offer/${id}`}>Offer</Link>
     </div>
   );
 };

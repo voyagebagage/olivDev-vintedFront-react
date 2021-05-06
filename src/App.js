@@ -2,17 +2,21 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "../src/containers/Home";
 import Offer from "./containers/Offer";
+import Header from "./component/Header";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/Offer">
-          <Offer />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <div className="container">
+          <Header />
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </div>
       </Switch>
     </Router>
   );
