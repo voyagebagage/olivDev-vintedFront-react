@@ -1,0 +1,19 @@
+.signup {
+  /* background-color: aquamarine; */
+  /* border: solid 5px blue; */
+  max-height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* justify-content: space-between; */
+}
+
+.form {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  /* flex-wrap: wrap; */
+}

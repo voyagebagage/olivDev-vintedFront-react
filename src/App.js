@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "../src/containers/Home";
 import Offer from "./containers/Offer";
 import Header from "./component/Header";
+import Signup from "./containers/Signup";
+// import Signup from "./containers/Signup";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
           <Header />
           <Route path="/offer/:id">
             <Offer />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
           <Route path="/">
             <Home />
