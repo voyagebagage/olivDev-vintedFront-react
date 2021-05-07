@@ -2,7 +2,7 @@ import "/Users/sedatif2/Documents/REACTEUR/04-React/week-2/08/vinted-front/src/c
 import { useState } from "react";
 import { useEffect } from "react";
 
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
@@ -24,15 +24,22 @@ const Signup = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup"
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: "olivier@lereacteur.io",
+          username: "Olivier",
+          phone: "012070823010",
+          password: "azerhgfy",
+        }
       );
+      console.log(response.data.token);
     };
     fetchData();
   }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // history.pushState("/");
+    history.push("/");
   };
 
   return (
@@ -45,7 +52,7 @@ const Signup = () => {
       }}
     >
       <h2>S'inscrire</h2>
-      <form className="form" onChange={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input type="name" onChange={(event) => setName(event.target.value)} />
         <input
           type="email"
