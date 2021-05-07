@@ -32,31 +32,33 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div
-      className="signup"
-      style={{
-        backgroundColor: "aqua",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
-      <h2>S'inscrire</h2>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <input
-          type="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <input type="checkbox" />
-        <input type="submit" />
-      </form>
+    <div className="container">
+      <div
+        className="signup"
+        style={{
+          backgroundColor: "aqua",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <h2>S'inscrire</h2>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <input
+            type="email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            type="password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <input type="checkbox" />
+          <input type="submit" />
+        </form>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Home from "../src/containers/Home";
 import Offer from "./containers/Offer";
 import Header from "./component/Header";
 import Signup from "./containers/Signup";
+import Login from "./containers/Login";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -22,20 +23,23 @@ function App() {
 
   return (
     <Router>
-      <Switch>
-        <div className="container">
-          <Header token={token} setUser={setUser} />
+      <div className="container">
+        <Header token={token} setUser={setUser} />
+        <Switch>
           <Route path="/offer/:id">
             <Offer />
           </Route>
           <Route path="/signup">
             <Signup setUser={setUser} />
           </Route>
+          <Route path="/login">
+            <Login setUser={setUser} />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 }

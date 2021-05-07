@@ -1,11 +1,30 @@
 .header {
-  height: 3vh;
+  /* height: 5vh; */
+  margin: auto;
+  padding: 10px 0;
   border-bottom: solid 1px aqua;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  width: 70vw;
+  width: 1280px;
+  /* width: 70vw; */
 }
 .header img {
-  height: 3vh;
+  height: 6vh;
+  border: aqua 1px solid;
+  object-fit: cover;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
+  margin: auto;
+  padding: 10px 0;
 }
