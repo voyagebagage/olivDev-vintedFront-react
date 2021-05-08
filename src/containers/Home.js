@@ -59,14 +59,13 @@ const Offer = () => {
       <section className="offers-display">
         {data.offers.map((offer) => {
           return (
-            <Link to="/offer/:id">
+            <Link to={`/offer/${offer._id}`}>
               <p
                 className="card-container"
                 key={offer._id}
                 style={{ border: "2px solid aqua" }}
               >
                 {/* {console.log(offer.owner.account.avatar.secure_url)}; */}
-                {/* {console.log(offer.product_details[0])} */}
                 <div className="card-avatar-username">
                   <img src={offer.owner.account.avatar.secure_url} alt={"B"} />
                   <h2>{offer.owner.account.username}</h2>

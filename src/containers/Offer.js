@@ -11,7 +11,6 @@ const Offer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -48,7 +47,7 @@ const Offer = () => {
   ) : (
     <div classnName="offer-body">
       {/* <Link to="/">Home</Link> */}
-      {/* <div className="offer-container">
+      <div className="offer-container">
         <div>
           <img
             className="offer-picture"
@@ -57,8 +56,7 @@ const Offer = () => {
           />
         </div>
         <div></div>
-       
-      </div> */}
+      </div>
     </div>
   );
 };
