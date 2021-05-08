@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Offer = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
@@ -41,42 +41,57 @@ const Offer = () => {
     </div>
   ) : (
     <>
-      <Link to="/">Home</Link>
       <section className="header-top">
         <div className="full-length-top-photo">
-          <div className="whiteBox"></div>
+          <div className="whiteBox">
+            <h3>Prêts à faire du tri dans vos placards ?</h3>
+            <button>Commencer à vendre</button>
+          </div>
+          <img
+            className="torn-effect"
+            src={
+              "https://lereacteur-vinted.netlify.app/static/media/tear.42d6cec6.svg"
+            }
+            alt={"torn effect"}
+          />
         </div>
       </section>
       <section className="offers-display">
         {data.offers.map((offer) => {
           return (
-            <p
-              className="card-container"
-              key={offer._id}
-              style={{ border: "2px solid aqua" }}
-            >
-              {/* {console.log(offer.owner.account.avatar.secure_url)}; */}
-              {/* {console.log(offer.product_details[0])} */}
-              <div className="card-avatar-username">
-                <img src={offer.owner.account.avatar.secure_url} alt={"B"} />
-                <h2>{offer.owner.account.username}</h2>
-                <img
-                  src={offer.product_image.secure_url}
-                  alt={offer.product_description}
-                />
-              </div>
-              <div>
-                <span>{offer.product_price}</span>
-                {offer.product_details.map((productDetail) => {
-                  {
-                    console.log(productDetail.MARQUE);
-                  }
-                  return <span>{productDetail.MARQUE}</span>;
-                })}
+            <Link to="/offer/:id">
+              <p
+                className="card-container"
+                key={offer._id}
+                style={{ border: "2px solid aqua" }}
+              >
+                {/* {console.log(offer.owner.account.avatar.secure_url)}; */}
+                {/* {console.log(offer.product_details[0])} */}
+                <div className="card-avatar-username">
+                  <img src={offer.owner.account.avatar.secure_url} alt={"B"} />
+                  <h2>{offer.owner.account.username}</h2>
+                  <img
+                    src={offer.product_image.secure_url}
+                    alt={offer.product_description}
+                  />
+                </div>
+                <div>
+                  <span>{offer.product_price}€</span>
+                  {offer.product_details.map((productDetail) => {
+                    return (
+                      <>
+                        <br />
+                        <span>{productDetail.TAILLE}</span>
+                        <br />
+                        <span>{productDetail.MARQUE}</span>
+                      </>
+                    );
+                  })}
 
-                <span></span>
-              </div>
-            </p>
+                  <span></span>
+                </div>
+              </p>
+            </Link>
           );
         })}
       </section>

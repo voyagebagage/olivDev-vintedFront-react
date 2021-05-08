@@ -22,6 +22,13 @@
   top: 75px;
   box-shadow: 0 0 2px rgb(17 17 17 / 24%);
 }
+.torn-effect {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+}
 .offers-display {
   width: 1280px;
   height: 100vh;
@@ -59,9 +66,13 @@
   width: 235px;
   padding: 0 6px 16px;
   cursor: pointer;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+
+  /* flex-direction: column-reverse; */
 }
 .card-avatar-username {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   padding: 10px;
 }
@@ -76,4 +87,7 @@
   height: 360px;
   width: 235px;
   object-fit: cover;
+  border: brown 2px solid;
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
 }
