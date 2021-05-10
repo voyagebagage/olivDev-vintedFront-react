@@ -1,6 +1,7 @@
 import "./Header.css";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
+import ReactSlider from "react-slider";
 
 const Header = ({ token, setUser }) => {
   return (
@@ -8,8 +9,21 @@ const Header = ({ token, setUser }) => {
       <Link to="/">
         <img src={logo} alt={"logo"} />
       </Link>
-      <label for="search">Search</label>
-      <input id="search"></input>
+      <div className="search-container">
+        <label for="search">Search</label>
+        <input id="search"></input>
+        <ReactSlider
+          className="horizontal-slider"
+          thumbClassName="example-thumb"
+          trackClassName="example-track"
+          defaultValue={[0, 100]}
+          ariaLabel={["Lower thumb", "Upper thumb"]}
+          ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
+          renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+          pearling
+          minDistance={10}
+        />
+      </div>
       {/* if token made it here then on click disconnect otherwise display connect/signup */}
       <div>
         {token ? (
@@ -32,7 +46,9 @@ const Header = ({ token, setUser }) => {
             </Link>
           </>
         )}
-        {/* <button className="header-button">vends tes articles</button> */}
+        <Link to="/offer/publish">
+          <button className="header-button">vends tes articles</button>
+        </Link>
         <br />
       </div>
     </div>

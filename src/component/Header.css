@@ -10,7 +10,7 @@
   /* width: 70vw; */
 }
 .header img {
-  height: 6vh;
+  height: 10vh;
   border: aqua 1px solid;
   object-fit: cover;
 }
@@ -20,11 +20,16 @@
   display: flex;
   flex-wrap: wrap;
 } */
-.header-container {
+/* .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 1280px;
   margin: auto;
   padding: 10px 0;
+} */
+.search-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }

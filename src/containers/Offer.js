@@ -47,7 +47,7 @@ const Offer = () => {
       </div>
     </div>
   ) : (
-    <div classnName="offer-body">
+    <div className="offer-body">
       <div className="offer-container">
         <div>
           <img

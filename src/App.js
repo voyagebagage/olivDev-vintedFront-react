@@ -7,6 +7,7 @@ import Offer from "./containers/Offer";
 import Header from "./component/Header";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+import Publish from "./containers/Publish";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -23,23 +24,26 @@ function App() {
 
   return (
     <Router>
-      <div className="container">
-        <Header token={token} setUser={setUser} />
-        <Switch>
-          <Route path="/offer/:id">
-            <Offer />
-          </Route>
-          <Route path="/signup">
-            <Signup setUser={setUser} />
-          </Route>
-          <Route path="/login">
-            <Login setUser={setUser} />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      {/* <div className="container"> */}
+      <Header token={token} setUser={setUser} />
+      <Switch>
+        <Route path="/offer/publish">
+          <Publish />
+        </Route>
+        <Route path="/offer/:id">
+          <Offer />
+        </Route>
+        <Route path="/signup">
+          <Signup setUser={setUser} />
+        </Route>
+        <Route path="/login">
+          <Login setUser={setUser} />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      {/* </div> */}
     </Router>
   );
 }

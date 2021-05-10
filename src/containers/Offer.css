@@ -1,13 +1,13 @@
 .offer-body {
   height: calc(100vh - 60px);
-  background-color: #156288;
+  background-color: #ebedee;
 }
 .offer-picture {
   height: 600px;
   object-fit: cover;
 }
 .offer-container {
-  width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;

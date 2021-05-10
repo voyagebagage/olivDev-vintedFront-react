@@ -7,7 +7,9 @@
   background-size: cover;
   border: 5px solid aqua;
   /* display: block; */
+  /* margin-left: -400px; */
 }
+
 .whiteBox {
   height: 220px;
   width: 360px;
