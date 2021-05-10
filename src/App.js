@@ -28,7 +28,7 @@ function App() {
       <Header token={token} setUser={setUser} />
       <Switch>
         <Route path="/offer/publish">
-          <Publish />
+          <Publish token={token} />
         </Route>
         <Route path="/offer/:id">
           <Offer />
