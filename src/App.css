@@ -1,6 +1,6 @@
 /* Other rules */
 * {
-  /* border: 0.1em solid aqua; */
+  border: 0.1em solid aqua;
   box-sizing: border-box;
 }
 /* .container {
@@ -21,4 +21,8 @@ div {
 section {
   border-top: aquamarine solid 2px;
   border-bottom: aquamarine solid 2px;
+}
+body {
+  margin: 0;
+  display: block;
 }

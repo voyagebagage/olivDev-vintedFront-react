@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const Header = ({ token, setUser }) => {
   return (
     <div className="header">
-      <img src={logo} alt={"logo"} />
+      <Link to="/">
+        <img src={logo} alt={"logo"} />
+      </Link>
       <label for="search">Search</label>
       <input id="search"></input>
       {/* if token made it here then on click disconnect otherwise display connect/signup */}

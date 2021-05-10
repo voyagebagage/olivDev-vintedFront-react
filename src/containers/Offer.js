@@ -1,5 +1,7 @@
-import { useParams } from "react";
+import { useParams } from "react-router-dom";
 import "./Offer.css";
+// import "./Home.css";
+
 import { useEffect, useState } from "react";
 
 // import { Link } from "react-router-dom";
@@ -46,7 +48,6 @@ const Offer = () => {
     </div>
   ) : (
     <div classnName="offer-body">
-      {/* <Link to="/">Home</Link> */}
       <div className="offer-container">
         <div>
           <img
@@ -55,7 +56,29 @@ const Offer = () => {
             alt={"image"}
           />
         </div>
-        <div></div>
+        <div className="offer-infos">
+          <div>
+            <span>{data.product_price}&nbsp;€</span>
+            <ul className="offer-list">
+              <li>{data.product_details[0].MARQUE}</li>
+              <li>{data.product_details[1].TAILLE}</li>
+              <li>{data.product_details[2].ÉTAT}</li>
+              <li>{data.product_details[3].COULEUR}</li>
+              <li>{data.product_details[4].EMPLACEMENT}</li>
+              <li>PAIEMENT</li>
+            </ul>
+          </div>
+          <div className="line"></div>
+          <div>
+            <div className="name">{data.product_name}</div>
+            <div className="descritpion">{data.product_description}</div>
+            <div className="offer-avatar-username">
+              <img src={data.owner.account.avatar.secure_url} alt={"B"} />
+              <h2>{data.owner.account.username}</h2>
+            </div>
+            <button>Acheter</button>
+          </div>
+        </div>
       </div>
     </div>
   );
