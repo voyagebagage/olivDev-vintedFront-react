@@ -59,13 +59,26 @@ const Offer = () => {
         <div className="offer-infos">
           <div>
             <span>{data.product_price}&nbsp;€</span>
+
             <ul className="offer-list">
-              <li>{data.product_details[0].MARQUE}</li>
-              <li>{data.product_details[1].TAILLE}</li>
-              <li>{data.product_details[2].ÉTAT}</li>
-              <li>{data.product_details[3].COULEUR}</li>
-              <li>{data.product_details[4].EMPLACEMENT}</li>
-              <li>PAIEMENT</li>
+              {data.product_details[0] && (
+                <li>{data.product_details[0].MARQUE}</li>
+              )}
+              {data.product_details[1] && (
+                <li>{data.product_details[1].TAILLE}</li>
+              )}
+              {data.product_details[2] && (
+                <li>{data.product_details[2].ÉTAT}</li>
+              )}
+              {data.product_details[3] && (
+                <li>{data.product_details[3].COULEUR}</li>
+              )}
+              {data.product_details[4] && (
+                <li>{data.product_details[4].EMPLACEMENT}</li>
+              )}
+              {data.product_details[5] && (
+                <li>{data.product_details[5]["MODES DE PAIEMENT"]}</li>
+              )}
             </ul>
           </div>
           <div className="line"></div>
@@ -73,7 +86,9 @@ const Offer = () => {
             <div className="name">{data.product_name}</div>
             <div className="descritpion">{data.product_description}</div>
             <div className="offer-avatar-username">
-              <img src={data.owner.account.avatar.secure_url} alt={"B"} />
+              {data.owner.account.avatar && (
+                <img src={data.owner.account.avatar.secure_url} alt={"B"} />
+              )}
               <h2>{data.owner.account.username}</h2>
             </div>
             <button>Acheter</button>

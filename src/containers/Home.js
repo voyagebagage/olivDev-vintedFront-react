@@ -17,12 +17,12 @@ const Offer = () => {
     fetchData();
   }, []);
   return isLoading ? (
-    <div className="downloading">
+    <div className="dl">
       <span>-_D_O_W_N_L_O_A_D_I_N_G_-</span>
       {/* <div className="downloading"></div> */}
       <div
         style={{
-          width: "100%",
+          width: "80%",
           height: "0",
           paddingBottom: "68%",
           position: "relative",
@@ -44,8 +44,8 @@ const Offer = () => {
       <section className="header-top">
         <div className="full-length-top-photo">
           <div className="whiteBox">
-            <h3>Prêts à faire du tri dans vos placards ?</h3>
-            <button>Commencer à vendre</button>
+            <span>Prêts à faire du tri dans vos placards ?</span>
+            <button className="whiteBox-button">Commencer à vendre</button>
           </div>
           <img
             className="torn-effect"
@@ -65,11 +65,17 @@ const Offer = () => {
                 key={offer._id}
                 style={{ border: "2px solid aqua" }}
               >
-                {/* {console.log(offer.owner.account.avatar.secure_url)}; */}
                 <div className="card-avatar-username">
-                  <img src={offer.owner.account.avatar.secure_url} alt={"B"} />
+                  {offer.owner.account.avatar && (
+                    <img
+                      src={offer.owner.account.avatar.secure_url}
+                      alt={"B"}
+                    />
+                  )}
                   <h2>{offer.owner.account.username}</h2>
+
                   <img
+                    className="product-image"
                     src={offer.product_image.secure_url}
                     alt={offer.product_description}
                   />
@@ -86,8 +92,6 @@ const Offer = () => {
                       </>
                     );
                   })}
-
-                  <span></span>
                 </div>
               </p>
             </Link>

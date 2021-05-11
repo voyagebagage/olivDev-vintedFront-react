@@ -6,7 +6,17 @@ form {
   justify-content: center;
 }
 .product-details,
-.titre-description {
+.title-description {
   display: flex;
   flex-direction: column;
+}
+.dl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.gif {
+  width: 1280px;
+  margin: auto;
 }

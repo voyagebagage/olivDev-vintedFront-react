@@ -6,13 +6,12 @@
   background-position: 50%;
   background-size: cover;
   border: 5px solid aqua;
-  /* display: block; */
-  /* margin-left: -400px; */
+  display: block;
 }
 
 .whiteBox {
-  height: 220px;
-  width: 360px;
+  height: 272px;
+  width: 410px;
   background-color: #fff;
   padding: 25px;
   border-radius: 3px;
@@ -20,9 +19,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* align-items: space-around; */
   position: absolute;
   top: 75px;
   box-shadow: 0 0 2px rgb(17 17 17 / 24%);
+  font-weight: 100;
 }
 .torn-effect {
   position: absolute;
@@ -39,19 +40,8 @@
   margin: 30px auto auto;
   /* border: 2px solid aqua; */
 }
-/* .downloading {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 68%;
-    /* position: relative; */
-/* position: absolute; */
-/* height: 100vh;
-    width: 100vw; */
-/* background-image: url("https://media.giphy.com/media/curuTbwjOnsRO/giphy.gif");
-    background-repeat: no-repeat; */
 
-.downloading span {
+.dl span {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -85,11 +75,27 @@
   border-radius: 50%;
   margin-right: 10px;
 }
-.card-container-container img:last-child {
+
+.product-image {
   height: 360px;
   width: 235px;
   object-fit: cover;
   border: brown 2px solid;
-  /* display: flex; */
-  /* flex-direction: row-reverse; */
 }
+.whiteBox > .whiteBox-button {
+  height: 5vh;
+  width: 13vw;
+  margin-top: 3vh;
+  /* height: 45px;
+  width: 187px; */
+  background-color: #2baeb7;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 0 14px;
+  /* margin-top: 32px; */
+}
+/* .whiteBox h3 {
+  font-size: 24px;
+} */

@@ -21,7 +21,9 @@ function App() {
       setToken(null);
     }
   };
+  // const setOffer = ()=>{
 
+  // }
   return (
     <Router>
       {/* <div className="container"> */}

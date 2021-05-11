@@ -42,7 +42,7 @@ const Header = ({ token, setUser }) => {
             </Link>
 
             <Link to="/login">
-              <button className="header-button">se connecter</button>
+              <button className="header-button-disconnect">se connecter</button>
             </Link>
           </>
         )}

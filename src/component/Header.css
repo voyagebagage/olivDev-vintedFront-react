@@ -14,22 +14,15 @@
   border: aqua 1px solid;
   object-fit: cover;
 }
-/* .container {
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-} */
-/* .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1280px;
-  margin: auto;
-  padding: 10px 0;
-} */
+
 .search-container {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+button {
+  height: 3vh;
+}
+.header-button-disconnect {
+  background-color: #c2165b;
 }
