@@ -1,13 +1,9 @@
-import {
-  useStripe,
-  useElements,
-  CardElement,
-  CardNumberElement,
-} from "@stripe/react-stripe-js";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
-const CheckoutForm = ({ setUserId, id }) => {
+const CheckoutForm = ({ id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [successMessage, setSuccessMessage] = useState("");
@@ -18,8 +14,7 @@ const CheckoutForm = ({ setUserId, id }) => {
       // Récupérer les données du formulaire
       const cardElements = elements.getElement(CardElement);
       console.log("cardElemnt", cardElements);
-
-      setUserId(id);
+      const id = Cookies.get("id");
       console.log("id", id);
       // Envoyer ces données à l'API Stripe
       const stripeResponse = await stripe.createToken(cardElements, {

@@ -13,23 +13,25 @@ import Payment from "./containers/Payment";
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
 
-  const [id, setId] = useState(Cookies.get("id") || null);
+  // const [id, setId] = useState(Cookies.get("id") || null);
 
-  const setUserId = (id) => {
-    if (id) {
-      Cookies.set("id", id, { expires: 3 });
-      setId(id);
-    } else {
-      Cookies.remove("id");
-      setId(null);
-    }
-  };
-  const setUser = (token) => {
+  // const setUserId = (id) => {
+  //   if (id) {
+  //     Cookies.set("id", id, { expires: 3 });
+  //     setUserId(id);
+  //   } else {
+  //     Cookies.remove("id");
+  //     setUserId(null);
+  //   }
+  // };
+  const setUser = (token, id) => {
     if (token) {
       Cookies.set("token", token, { expires: 3 });
+      Cookies.set("id", id, { expires: 3 });
       setToken(token);
     } else {
       Cookies.remove("token");
+      Cookies.remove("id");
       setToken(null);
     }
   };
@@ -38,7 +40,11 @@ function App() {
     <Router>
       {/* <div className="container"> */}
 
-      <Header token={token} setUser={setUser} setUserId={setUserId} />
+      <Header
+        token={token}
+        setUser={setUser}
+        // setUserId={setUserId}
+      />
       <Switch>
         <Route path="/offer/publish">
           <Publish token={token} />
@@ -47,7 +53,9 @@ function App() {
           <Offer />
         </Route>
         <Route exact path="/payment">
-          <Payment id={id} />
+          <Payment
+          // id={id}
+          />
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />

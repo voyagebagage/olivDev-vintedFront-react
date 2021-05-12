@@ -31,7 +31,6 @@ const Header = ({ token, setUser }) => {
             className="header-button-disconnect"
             onClick={() => {
               setUser(null);
-              setUserId(null);
             }}
           >
             se déconnecter

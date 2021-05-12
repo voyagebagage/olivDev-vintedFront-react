@@ -27,9 +27,9 @@ const Login = ({ setUser, setUserId }) => {
 
     // console.log("I'm the Token =>", token);
     //send token to setUser Func and put it in a cookie there thax to {setUser} in props
-    setUser(token);
+    setUser(token, id);
     //and id for payment
-    setUserId(id);
+    // setUserId(id);
     // console.log("I'm the id =>", id);
 
     //back to home
