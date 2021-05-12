@@ -40,6 +40,11 @@ const Publish = ({ token }) => {
           },
         }
       );
+      if (response.data._id) {
+        history.push(`/offer/${response.data._id}`);
+      } else {
+        alert("Une erreur est survenue");
+      }
       setData(response.data);
       alert(JSON.stringify(response.data));
     } catch (error) {
@@ -59,6 +64,7 @@ const Publish = ({ token }) => {
                 type="file"
                 onChange={(event) => setPicture(event.target.files[0])}
               />
+              {picture && <img src={URL.createObjectURL(picture)} />}
             </div>
             <div className="title-description">
               <input

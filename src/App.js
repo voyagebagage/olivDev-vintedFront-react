@@ -8,10 +8,22 @@ import Header from "./component/Header";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import Publish from "./containers/Publish";
+import Payment from "./containers/Payment";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
 
+  const [id, setId] = useState(Cookies.get("id") || null);
+
+  const setUserId = (id) => {
+    if (id) {
+      Cookies.set("id", id, { expires: 3 });
+      setId(id);
+    } else {
+      Cookies.remove("id");
+      setId(null);
+    }
+  };
   const setUser = (token) => {
     if (token) {
       Cookies.set("token", token, { expires: 3 });
@@ -21,19 +33,21 @@ function App() {
       setToken(null);
     }
   };
-  // const setOffer = ()=>{
 
-  // }
   return (
     <Router>
       {/* <div className="container"> */}
-      <Header token={token} setUser={setUser} />
+
+      <Header token={token} setUser={setUser} setUserId={setUserId} />
       <Switch>
         <Route path="/offer/publish">
           <Publish token={token} />
         </Route>
         <Route path="/offer/:id">
           <Offer />
+        </Route>
+        <Route exact path="/payment">
+          <Payment id={id} />
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />

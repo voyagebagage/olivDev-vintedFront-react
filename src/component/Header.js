@@ -28,9 +28,10 @@ const Header = ({ token, setUser }) => {
       <div>
         {token ? (
           <button
-            className="header-button"
+            className="header-button-disconnect"
             onClick={() => {
               setUser(null);
+              setUserId(null);
             }}
           >
             se déconnecter
@@ -42,7 +43,7 @@ const Header = ({ token, setUser }) => {
             </Link>
 
             <Link to="/login">
-              <button className="header-button-disconnect">se connecter</button>
+              <button className="header-button">se connecter</button>
             </Link>
           </>
         )}

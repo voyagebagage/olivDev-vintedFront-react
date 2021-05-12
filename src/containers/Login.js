@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, setUserId }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -19,11 +19,19 @@ const Login = ({ setUser }) => {
         password,
       }
     );
-    //collect token
+
+    //collect token & id
     const token = response.data.token;
+    const id = response.data._id;
+    // console.log("I'm the id =>", response.data._id);
+
     // console.log("I'm the Token =>", token);
     //send token to setUser Func and put it in a cookie there thax to {setUser} in props
     setUser(token);
+    //and id for payment
+    setUserId(id);
+    // console.log("I'm the id =>", id);
+
     //back to home
     history.push("/");
   };
